@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Teste Xadrez</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <h1>Test Xadrez</h1>
+        <p>Contador de pecas</p>
+        <div class="containerCanvas">
+
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <h3>Entrada de Dados</h3>
+            <div class="divEntrada">
+                <form id="formulario">
+                    <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="insira a configuração das peças(matriz 8x8)"></textarea>
+                    <button onclick="getEntrada()" type="button">GET ENTRADA</button>
+                </form>
+            </div>
+        </div>
+        <div class="resultadoM" id="resultadoM"></div>
+        <script src="script.js" async defer></script>
+    </body>
+</html>

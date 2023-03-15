@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
+
+canvas{
+    background-color: beige;
+}
+
+body{
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+
+.containerCanvas{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 2px 0px 2px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    border: solid 1px gainsboro;
+    border-radius: 8px;
+}
+
+#entrada{
+    margin: 10px;
+    height: 150px;
+}
+
+textarea{
+    resize: none;
+    width: 150px;
+    height: 300px;
+}
+
+.divEntrada{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input{
+    margin: 10px;
+}
+
+.resultadoM{
+    display: block;
+    opacity: 0;
+    border: solid 1px gainsboro;
+    border-radius: 8px;
+    transition: ease-in-out 1.5s;
+    margin: 0 auto;
+    text-align: left;
+    translate: 0px 400px;
+    width: 150px;
+    height: fit-content;
+    padding: 5px;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
+    position: absolute;
+    background-color: white;
+    top: 60%;
+    left: 80%;
+}
