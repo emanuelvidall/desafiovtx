@@ -1,10 +1,10 @@
 const canvas = document.getElementById('canvas');
 
 const ctx = canvas.getContext('2d');
-ctx.fillStyle = 'black';
+ctx.fillStyle = '#E8EDF9';
 ctx.fillRect(0, 0, 400, 400);
 
-ctx.fillStyle = 'white';
+ctx.fillStyle = '#B7C0D8';
 
 for (let i = 0; i < 8; i++) {
     for (let j = 0; j < 8; j++) {
@@ -21,9 +21,8 @@ function getEntrada(){
     console.log(arrayEntrada);
     const formulario = document.getElementById('formulario');
     const divResultado = document.getElementById('resultadoM');
-    divResultado.style.opacity = 1;
     divResultado.innerHTML = "";
-    divResultado.style.translate = "0px -200px";
+    divResultado.style.opacity = 1;
 
     for (let i = 0; i < 7; i++){
         function checkPeca(peca){
