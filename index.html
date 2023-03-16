@@ -7,10 +7,16 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.263/build/spline-viewer.js"></script>
     </head>
     <body>
         <h1>Test Xadrez</h1>
         <p>Contador de pecas</p>
+        <div class="conteudoSpline">
+            <!-- <iframe src='https://my.spline.design/chessboard-d460ddfdc94f49be4733af9439637e85/' class="chess" width="640" height="360" frameborder="0"></iframe> -->   
+            <spline-viewer loading-anim url="https://prod.spline.design/FjPNUwAxFelMzLPT/scene.splinecode"></spline-viewer>
+        </div>
+        <p>Pawn Endgame</p>
         <div class="containerCanvas">
 
             <canvas id="canvas" width="400" height="400"></canvas>
