@@ -57,4 +57,8 @@ function keyPress (e) {
     }
 }
 
+//preencher canvas com icones do fa de cada peca, usando o codigo de cada peca como referencia para o icone. No canvas, cada espaco sera uma nova div com icone correspondente ou posso usar uma div em cima do canvas e dividir com uma grid 8x8 e cada element seria o icone referente.
+
+//desenhar os icones com ctxdrawimage?
+
 document.addEventListener('keydown', keyPress);
