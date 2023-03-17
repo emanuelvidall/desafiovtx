@@ -48,9 +48,7 @@ function fecharModal(){
 }
 
 function keyPress (e) {
-    const modal = document.getElementById('modal');
     if(e.key === "Escape") {
-        modal.style.animation = "fadeOut 0.5s";
         fecharModal();
         console.log("presisonado escape")
     }else if(e.key === "Enter"){
