@@ -7,21 +7,34 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/026e4f1f21.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Test Xadrez</h1>
-        <p>Contador de pecas</p>
+        <div class="title is-1">
+            <h1>Desafio do Xadrez <i class="fa-solid fa-chess"></i></h1>
+            <p class="subtitle is-3">Contador de pecas</p>
+        </div>
         <div class="containerCanvas">
-            <div class="resultadoM" id="resultadoM"></div>
             <canvas id="canvas" width="400" height="400"></canvas>
             <h3>Entrada de Dados</h3>
             <div class="divEntrada">
                 <form id="formulario">
                     <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="insira a configuração das peças(matriz 8x8)"></textarea>
-                    <button id="botaoGet" onclick="getEntrada()" type="button">GET ENTRADA</button>
+                    <button id="botaoGet" onclick="getEntrada()" type="button">CONTAR PEÇAS</button>
                 </form>
             </div>
+            <div class="modal" id="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div id="cavaloRoda">
+                        <iframe src='https://my.spline.design/untitled-b72ed5ac93eec53597ea10060ff3cac2/' frameborder='0' width='200px' height='300px'></iframe>
+                    </div>
+                    <div class="resultadoM" id="resultadoM">oi</div>
+                </div>
+                <button class="modal-close is-large" aria-label="close" onclick="fecharModal()"></button>
+                </div>
         </div>
+        <footer>Criado por <a href="https://emanuelvidal.com">Emanuel Vidal</a> para o Processo Seletivo Vortex 2023 - Desafio do Xadrez</footer>
         
         <script src="script.js" async defer></script>
     </body>

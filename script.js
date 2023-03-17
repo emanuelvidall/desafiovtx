@@ -18,21 +18,45 @@ function getEntrada(){
     const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rei', 'Rainha'];
     //remocao de todo e qualquer espaco em branco, incluindo empty strings no caso de enter na entrada de dados. Usando .replace para remover os enters e .split para separar os elementos em um array e usando .filter para remover os elementos vazios combinado com o .trim para remover os espacos em branco incluindo empty strings.
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
-    console.log(arrayEntrada);
     const formulario = document.getElementById('formulario');
     const divResultado = document.getElementById('resultadoM');
     divResultado.innerHTML = "";
-    divResultado.style.opacity = 1;
+    const modal = document.getElementById('modal');
+
 
     for (let i = 0; i < 7; i++){
         function checkPeca(peca){
             return peca == i;
         }
         let resultado = arrayEntrada.filter(checkPeca);
-        divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
-        console.log(codigos[i] + " " + resultado.length + " peça(s) ");
-        console.log(resultado.filter(checkPeca));
+        if(i !== 0){
+            divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
+            divResultado.innerHTML += `<progress class="progress is-primary" value="${resultado.length}" max="64">15%</progress>`;
+            console.log(codigos[i] + " " + resultado.length + " peça(s) ");
+            console.log(resultado.filter(checkPeca));
+        }else{
+            divResultado.innerHTML += `Existem ${resultado.length}<strong> espacos vazios</strong><br> <strong>Contagem de pecas</strong>:<br>`
+        }
     }
-
+    modal.classList.add('is-active');
     formulario.reset();
 }
+
+function fecharModal(){
+    const modal = document.getElementById('modal');
+    modal.classList.remove('is-active');
+}
+
+function keyPress (e) {
+    const modal = document.getElementById('modal');
+    if(e.key === "Escape") {
+        modal.style.animation = "fadeOut 0.5s";
+        fecharModal();
+        console.log("presisonado escape")
+    }else if(e.key === "Enter"){
+        getEntrada();
+        console.log("presisonado enter")
+    }
+}
+
+document.addEventListener('keydown', keyPress);
