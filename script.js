@@ -22,6 +22,7 @@ toastr.options = {
     "positionClass": "toast-top-center",
     "preventDuplicates": false,
     "onclick": null,
+    "preventDuplicates": true,
     "showDuration": "300",
     "hideDuration": "1000",
     "timeOut": "5000",
@@ -61,6 +62,16 @@ areatexto.addEventListener("input", () => {
         }
     }
     areatexto.value = newvalue;
+});
+//eventlistener para abrir e fechar modal quando cursor estiver na textarea
+areatexto.addEventListener("keydown", (e) => {
+    if(e.key === "Enter"){
+        getEntrada();
+        console.log("presisonado enter");
+    }else if(e.key === "Escape"){
+        fecharModal();
+        console.log("pressionado escape");
+    }
 });
 
 //funcao principal com definicao das pecas, tratamento do input do usuario para tratar quaisquer erros, gerando no final uma array de 64 items cada item com um numero de 0-6
