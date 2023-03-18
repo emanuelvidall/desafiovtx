@@ -95,7 +95,7 @@ textarea {
     border: solid 1px gainsboro;
     padding: 2px;
     box-shadow: inset 0 0 3px 5px rgba(0,0,0,0.02);
-    font-size: small;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -112,11 +112,12 @@ textarea:focus{
     font-family: 'Inter';
     color: white;
     cursor: pointer;
+    animation-play-state: paused;
 }
-/* 
+
 #botaoGet:hover{
     animation-play-state: running;
-} */
+}
 
 .modal{
     animation: fadeIn 1s;
@@ -137,7 +138,7 @@ footer{
     text-align: center;
     margin: auto;
     margin-top: 20px;
-    position: fixed;
+    position: relative;
 }
 
 .title h1{
