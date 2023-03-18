@@ -111,12 +111,12 @@ textarea:focus{
     font-weight: 400;
     font-family: 'Inter';
     color: white;
-    animation-play-state:paused;
+    cursor: pointer;
 }
-
+/* 
 #botaoGet:hover{
-    animation-play-state: running;    
-}
+    animation-play-state: running;
+} */
 
 .modal{
     animation: fadeIn 1s;
@@ -151,7 +151,6 @@ progress{
     max-width: 200px;
 }
 
-.toasted{
-    animation: fadeIn 1s;
-    opacity: 0;
+.toast{
+    opacity: 1 !important;
 }
