@@ -73,12 +73,29 @@ areatexto.addEventListener("keydown", (e) => {
         console.log("pressionado escape");
     }
 });
-
+const tabuleiro = document.getElementById('drawIcons')
 //funcao principal com definicao das pecas, tratamento do input do usuario para tratar quaisquer erros, gerando no final uma array de 64 items cada item com um numero de 0-6
 function getEntrada(){
     const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rei', 'Rainha'];
     //remocao de todo e qualquer espaco em branco, incluindo empty strings no caso de enter na entrada de dados. Usando .replace para remover os enters e .split para separar os elementos em um array e usando .filter para remover os elementos vazios combinado com o .trim para remover os espacos em branco incluindo empty strings.
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
+    console.log(arrayEntrada);
+    for (let i = 0; i < arrayEntrada.length ; i++){
+        if (arrayEntrada[i] == 1){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-pawn"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 2){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-tower"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 3){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-horse"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 4){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-bishop"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 5){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-queen"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 6){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-king"></i></h1></div><br>`
+        }else if(arrayEntrada[i] == 0){
+            tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div><br>`
+        }
     //notificacao para usuario caso o input nao tenha 64 numeros
     if (arrayEntrada.length > 64 || arrayEntrada.length < 64){
             toastr.error("Preencha com 64 peças ou espaços vazios");
@@ -107,8 +124,9 @@ function getEntrada(){
         }
     }
 //rest do formulario para novos inputs e adiciona a classe is-active para exibir o modal
-        modal.classList.add('is-active');
+        // modal.classList.add('is-active');
         formulario.reset();
+}
 }
 //funcao para fechar o modal com remocao da classe
 function fecharModal(){
@@ -145,3 +163,7 @@ function fecharModalExplicacao(){
 //preencher canvas com icones do fa de cada peca, usando o codigo de cada peca como referencia para o icone. No canvas, cada espaco sera uma nova div com icone correspondente ou posso usar uma div em cima do canvas e dividir com uma grid 8x8 e cada element seria o icone referente.
 
 //desenhar os icones com ctxdrawimage?
+
+function adicionapecas(){
+    tabuleiro.innerHTML = `<div class="a8"<h1><i class="fas fa-chess-rook"></i></h1></div>`
+}

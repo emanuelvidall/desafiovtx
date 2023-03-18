@@ -23,11 +23,15 @@
         </div>
         <div class="containerCanvas">
             <canvas id="canvas" width="400" height="400"></canvas>
+            <div class="drawIcons" id="drawIcons">
+                
+            </div>
             <h3>Entrada de Dados <button onclick="modalExplicacao()" class="explicacao animate__animated animate__heartBeat"><i class="fa-solid fa-circle-question"></i></button></h3>
             <div class="divEntrada">
                 <form id="formulario">
                     <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="Entre com a matriz 8x8 de peças" rows="8" cols="8"></textarea>
                     <button id="botaoGet" onclick="getEntrada()" type="button" class="animate__animated animate__heartBeat">CONTAR PEÇAS</button>
+                    <button onclick="adicionapecas()" type="button">adicinar peças</button>
                 </form>
             </div>
             <div class="modal" id="modal">
