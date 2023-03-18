@@ -67,10 +67,8 @@ areatexto.addEventListener("input", () => {
 areatexto.addEventListener("keydown", (e) => {
     if(e.key === "Enter"){
         getEntrada();
-        console.log("presisonado enter");
     }else if(e.key === "Escape"){
         fecharModal();
-        console.log("pressionado escape");
     }
 });
 const tabuleiro = document.getElementById('drawIcons')
@@ -79,21 +77,20 @@ function getEntrada(){
     const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rainha', 'Rei'];
     //remocao de todo e qualquer espaco em branco, incluindo empty strings no caso de enter na entrada de dados. Usando .replace para remover os enters e .split para separar os elementos em um array e usando .filter para remover os elementos vazios combinado com o .trim para remover os espacos em branco incluindo empty strings.
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
-    console.log(arrayEntrada);
     tabuleiro.innerHTML = "";
     for (let i = 0; i < arrayEntrada.length ; i++){
         if (arrayEntrada[i] == 1){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Peao</b>" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Peao (1)</b>" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 2){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou uma <b>Torre</b>" class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou uma <b>Torre (2)</b>" class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 3){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Cavalo</b>" class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Cavalo (3)</b>" class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 4){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Bispo</b>" class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Bispo (4)</b>" class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 5){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou a <b>Rainha</b>" class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou a <b>Rainha (5)</b>" class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 6){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou o <b>Rei</b>" class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou o <b>Rei (6)</b>" class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 0){
             tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div>`
         }
@@ -116,8 +113,6 @@ function getEntrada(){
 //quando nao for espaco vazio, exibir o resultado no modal com o nome da peça e uma progress bar
                 divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
                 divResultado.innerHTML += `<progress class="progress is-primary" value="${resultado.length}" max="64">15%</progress>`;
-                console.log(codigos[i] + " " + resultado.length + " peça(s) ");
-                console.log(resultado.filter(checkPeca));
             }else{
 //quando for espaco vazio, avisa quantos espacos vazios possui
                 divResultado.innerHTML += `Existem ${resultado.length}<strong> espacos vazios</strong><br> <strong>Contagem de pecas</strong>:<br>`
@@ -126,8 +121,12 @@ function getEntrada(){
     }
     let mouseTip = new MouseTip();
     mouseTip.start();
+        
 //rest do formulario para novos inputs e adiciona a classe is-active para exibir o modal
-        // modal.classList.add('is-active');
+        modal.classList.add('is-active');
+        const cavaloRoda = document.getElementById('cavaloRoda');
+        cavaloRoda.innerHTML = "";
+        cavaloRoda.innerHTML = `<spline-viewer loading-anim url="https://prod.spline.design/HxbMr6oeaxA-YFjP/scene.splinecode"></spline-viewer>`;
         formulario.reset();
 }
 }
@@ -140,10 +139,8 @@ function fecharModal(){
 function keyPress (e) {
     if(e.key === "Escape") {
         fecharModal();
-        console.log("presisonado escape")
     }else if(e.key === "Enter"){
         getEntrada();
-        console.log("presisonado enter")
     }
 }
 
@@ -152,7 +149,6 @@ const explicacao = document.getElementById('explicacao');
 document.addEventListener("keydown", (e) => {
     if(e.key === "Escape"){
         fecharModalExplicacao();
-        console.log("pressionado escape");
     }
 });
 
@@ -162,3 +158,4 @@ function modalExplicacao(){
 function fecharModalExplicacao(){
     explicacao.classList.remove('is-active');
 }
+
