@@ -169,33 +169,39 @@ progress{
 }
 
 .drawIcons{
-    background-color: aquamarine;
     text-align: center;
     height: 330px;
     width: 330px;
     position: absolute;
-    opacity: 0.5;
+    opacity: 0.8;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
     gap: 0px 0px; 
     grid-template-areas: 
-    "a8 b8 c8 d8 e8 f8 g8 h8"
-    "a7 b7 c7 d7 e7 f7 g7 h7"
-    "a6 b6 c6 d6 e6 f6 g6 h6"
-    "a5 b5 c5 d5 e5 f5 g5 h5"
-    "a4 b4 c4 d4 e4 f4 g4 h4"
-    "a3 b3 c3 d3 e3 f3 g3 h3"
-    "a2 b2 c2 d2 e2 f2 g2 h2"
-    "a1 b1 c1 d1 e1 f1 g1 h1"; 
+    a0 a1 a2 a3 a4 a5 a6 a7
+    a8 a9 a10 a11 a12 a13 a14 a15
+    a16 a17 a18 a19 a20 a21 a22 a23
+    a24 a25 a26 a27 a28 a29 a30 a31
+    a32 a33 a34 a35 a36 a37 a38 a39
+    a40 a41 a42 a43 a44 a45 a46 a47
+    a48 a49 a50 a51 a52 a53 a54 a55
+    a56 a57 a58 a59 a60 a61 a62 a63;
     padding: 0;
     margin: 0;
 }
 
-.a8, .b8, .c8, .d8, .e8, .f8, .g8, .h8, .a7, .b7, .c7, .d7, .e7, .f7, .g7, .h7, .a6, .b6, .c6, .d6, .e6, .f6, .g6, .h6, .a5, .b5, .c5, .d5, .e5, .f5, .g5, .h5, .a4, .b4, .c4, .d4, .e4, .f4, .g4, .h4, .a3, .b3, .c3, .d3, .e3, .f3, .g3, .h3, .a2, .b2, .c2, .d2, .e2, .f2, .g2, .h2, .a1, .b1, .c1, .d1, .e1, .f1, .g1, .h1{
-    display: block;
+.a0, .a1, .a2, .a3, .a4, .a5, .a6, .a7, .a8, .a9, .a10, .a5, .a6, .a7, .a8, .a9, .a10, .a11, .a12, .a13, .a14, .a15, .a16, .a17, .a18, .a19, .a20, .a21, .a22, .a23, .a24, .a25, .a26, .a27, .a28, .a29, .a30, .a31, .a32, .a33, .a34, .a35, .a36, .a37, .a38, .a39, .a40, .a41, .a42, .a43, .a44, .a45, .a46, .a47, .a48, .a49, .a50, .a51, .a52, .a53, .a54, .a55, .a56, .a57, .a58, .a59, .a60, .a61, .a62, .a63 {
+    position: relative;
     padding-top:10px;
     text-align: center;
-    grid-area: a8;
-    background-color: red;
+}
+
+.drawIcons i{
+    cursor: pointer;
+}
+
+.drawIcons i:hover{
+    scale: 1.2;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.05);
 }

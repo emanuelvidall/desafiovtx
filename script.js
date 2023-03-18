@@ -80,21 +80,22 @@ function getEntrada(){
     //remocao de todo e qualquer espaco em branco, incluindo empty strings no caso de enter na entrada de dados. Usando .replace para remover os enters e .split para separar os elementos em um array e usando .filter para remover os elementos vazios combinado com o .trim para remover os espacos em branco incluindo empty strings.
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
     console.log(arrayEntrada);
+    tabuleiro.innerHTML = "";
     for (let i = 0; i < arrayEntrada.length ; i++){
         if (arrayEntrada[i] == 1){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-pawn"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i} tip"<h1><i id="tip" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 2){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-tower"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 3){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-horse"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 4){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-bishop"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 5){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-queen"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 6){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-king"></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 0){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div><br>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div>`
         }
     //notificacao para usuario caso o input nao tenha 64 numeros
     if (arrayEntrada.length > 64 || arrayEntrada.length < 64){
@@ -128,6 +129,11 @@ function getEntrada(){
         formulario.reset();
 }
 }
+
+    tippy('#tip', {
+                content: 'My tooltip!',
+            });
+
 //funcao para fechar o modal com remocao da classe
 function fecharModal(){
     const modal = document.getElementById('modal');

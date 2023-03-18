@@ -6,6 +6,23 @@
         <title>Teste Xadrez</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="./favicon.ico">
+        <!-- Primary Meta Tags -->
+    <title>Desafio do Xadrez</title>
+    <meta name="title" content="Desafio do Xadrez">
+    <meta name="description" content="App desenvolvido por Emanuel Vidal para o processo seletivo do UNIFOR Vortex 2023. O Desafio do Xadrez conta o numero de pecas em um tabuleiro e exibe sua contagem.">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://desafiovtx.vercel.app/">
+    <meta property="og:title" content="Desafio do Xadrez">
+    <meta property="og:description" content="App desenvolvido por Emanuel Vidal para o processo seletivo do UNIFOR Vortex 2023. O Desafio do Xadrez conta o numero de pecas em um tabuleiro e exibe sua contagem.">
+    <meta property="og:image" content="">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://desafiovtx.vercel.app/">
+    <meta property="twitter:title" content="Desafio do Xadrez">
+    <meta property="twitter:description" content="App desenvolvido por Emanuel Vidal para o processo seletivo do UNIFOR Vortex 2023. O Desafio do Xadrez conta o numero de pecas em um tabuleiro e exibe sua contagem.">
+    <meta property="twitter:image" content="">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <link href="https://unpkg.com/webkul-micron@1.1.6/dist/css/micron.min.css" type="text/css" rel="stylesheet">
         <script src="https://unpkg.com/webkul-micron@1.1.6/dist/script/micron.min.js" type="text/javascript"></script>
@@ -18,7 +35,7 @@
     </head>
     <body>
         <div class="title is-1 animate__animated animate__backInDown">
-            <h1>Desafio do Xadrez <i class="fa-solid fa-chess"></i></h1>
+            <h1><i class="fa-solid fa-chess"></i> Desafio do Xadrez </h1>
             <p class="subtitle is-3">Contador de peças</p>
         </div>
         <div class="containerCanvas">
@@ -86,6 +103,8 @@
                 <button class="modal-close is-large" aria-label="close" onclick="fecharModalExplicacao()"></button>
             </div>
         <footer>Criado por <b><a href="https://emanuelvidal.com">Emanuel Vidal</a></b> para o Processo Seletivo <b>Vortex UNIFOR</b> - Fortaleza 2023</footer>
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
         <script src="script.js" async defer></script>
     </body>
 </html>
