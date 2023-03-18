@@ -23,17 +23,10 @@
         </div>
         <div class="containerCanvas">
             <canvas id="canvas" width="400" height="400"></canvas>
-            <h3>Entrada de Dados</h3>
+            <h3>Entrada de Dados <button onclick="modalExplicacao()" class="explicacao animate__animated animate__heartBeat"><i class="fa-solid fa-circle-question"></i></button></h3>
             <div class="divEntrada">
                 <form id="formulario">
-                    <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="Ex: 4 3 2 5 6 2 3 4
-1 1 1 1 1 1 1 1
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0
-1 1 1 1 1 1 1 1
-4 3 2 5 6 2 3 4" rows="8" cols="8"></textarea>
+                    <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="Entre com a matriz 8x8 de peças" rows="8" cols="8"></textarea>
                     <button id="botaoGet" onclick="getEntrada()" type="button" class="animate__animated animate__heartBeat">CONTAR PEÇAS</button>
                 </form>
             </div>
@@ -47,6 +40,46 @@
                 </div>
                 <button class="modal-close is-large" aria-label="close" onclick="fecharModal()"></button>
                 </div>
+            </div>
+            <div class="modal" id="explicacao">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="content">
+                        <h1 class="title is-3">Entrada de Dados</h1>
+                        <p class="subtitle is-5">Desafio do Xadrez </p>
+                        Você deve fazer a entrada dos dados da seguinte forma:
+                        <br>
+                        Uma matriz 8x8 de peças de xadrez, onde cada peça é representada por um número, de 0 à 6, sendo:
+                        <br>
+                        <hr>
+                        <b>0</b>: Espaço vazio |
+                        <b>1</b>: <i class="fa-solid fa-chess-pawn"></i>Peão |
+                        <b>2</b>: <i class="fa-solid fa-chess-tower"></i>Torre |
+                        <b>3</b>: <i class="fa-solid fa-chess-horse"></i>Cavalo |
+                        <b>4</b>: <i class="fa-solid fa-chess-bishop"></i>Bispo |
+                        <b>5</b>: <i class="fa-solid fa-chess-queen"></i>Rainha |
+                        <b>6</b>: <i class="fa-solid fa-chess-king"></i>Rei |
+                        <br>
+                        <hr>
+                        Seu input deverá ficar semelhante ao exemplo abaixo:<br>
+                        <hr>
+                        4 3 2 5 6 2 3 4<br>
+                        1 1 1 1 1 1 1 1<br>
+                        0 0 0 0 0 0 0 0<br>
+                        0 0 0 0 0 0 0 0<br>
+                        0 0 0 0 0 0 0 0<br>
+                        0 0 0 0 0 0 0 0<br>
+                        1 1 1 1 1 1 1 1<br>
+                        4 3 2 5 6 2 3 4<br>
+                        <hr>
+                        <button id="botaoGet" onclick="fecharModalExplicacao()" type="button" class="animate__animated animate__heartBeat">ENTENDI!</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close" onclick="fecharModalExplicacao()"></button>
             </div>
         <footer>Criado por <b><a href="https://emanuelvidal.com">Emanuel Vidal</a></b> para o Processo Seletivo <b>Vortex UNIFOR</b> - Fortaleza 2023</footer>
         <script src="script.js" async defer></script>

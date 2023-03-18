@@ -156,3 +156,14 @@ progress{
 .toast{
     opacity: 1 !important;
 }
+
+.explicacao{
+    all: unset;
+    font-size: 16px;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+.explicacao:hover{
+    animation-play-state: running;
+}

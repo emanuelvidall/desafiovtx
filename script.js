@@ -126,6 +126,22 @@ function keyPress (e) {
     }
 }
 
+const explicacao = document.getElementById('explicacao');
+
+document.addEventListener("keydown", (e) => {
+    if(e.key === "Escape"){
+        fecharModalExplicacao();
+        console.log("pressionado escape");
+    }
+});
+
+function modalExplicacao(){
+    explicacao.classList.add('is-active');
+}
+function fecharModalExplicacao(){
+    explicacao.classList.remove('is-active');
+}
+
 //preencher canvas com icones do fa de cada peca, usando o codigo de cada peca como referencia para o icone. No canvas, cada espaco sera uma nova div com icone correspondente ou posso usar uma div em cima do canvas e dividir com uma grid 8x8 e cada element seria o icone referente.
 
 //desenhar os icones com ctxdrawimage?
