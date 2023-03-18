@@ -1,10 +1,7 @@
 const canvas = document.getElementById('canvas');
-
-
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#E8EDF9';
 ctx.fillRect(0, 0, 400, 400);
-
 ctx.fillStyle = '#B7C0D8';
 
 for (let i = 0; i < 8; i++) {
@@ -23,14 +20,16 @@ function getEntrada(){
     const divResultado = document.getElementById('resultadoM');
     divResultado.innerHTML = "";
     const modal = document.getElementById('modal');
-
+    let contadortotal = 0;
     for (let i = 0; i < 7; i++){
         function checkPeca(peca){
             return peca == i;
         }
         let resultado = arrayEntrada.filter(checkPeca);
-        if (resultado.length > 64){
-            alert("Quantidade de peças excede o limite de 64 peças");
+        contadortotal += resultado.length;
+        if (arrayEntrada.length > 64){
+            toastr.warning("Quantidade de peças excede o limite de 64 peças");
+            console.log('ta rodando aqui o toast')
             break;
         }else{
             if(i !== 0){
@@ -42,9 +41,10 @@ function getEntrada(){
                 divResultado.innerHTML += `Existem ${resultado.length}<strong> espacos vazios</strong><br> <strong>Contagem de pecas</strong>:<br>`
             }
         }
+        modal.classList.add('is-active');
+        formulario.reset();
     }
-    modal.classList.add('is-active');
-    formulario.reset();
+    
 }
 
 function fecharModal(){
@@ -67,3 +67,10 @@ function keyPress (e) {
 //desenhar os icones com ctxdrawimage?
 
 document.addEventListener('keydown', keyPress);
+
+// $(function(){
+//                 toastr.success("Success Message")
+//                 toastr.info("Info Message")
+//                 toastr.warning("warning message")
+//                 toastr.console.error("Error Message")
+//             });

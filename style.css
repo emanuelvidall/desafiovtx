@@ -136,7 +136,8 @@ footer{
     width: 100%;
     text-align: center;
     margin: auto;
-    margin-top: 60px;
+    margin-top: 20px;
+    position: fixed;
 }
 
 .title h1{
@@ -148,4 +149,9 @@ footer{
 
 progress{
     max-width: 200px;
+}
+
+.toasted{
+    animation: fadeIn 1s;
+    opacity: 0;
 }
