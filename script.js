@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 
+
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#E8EDF9';
 ctx.fillRect(0, 0, 400, 400);
@@ -23,19 +24,23 @@ function getEntrada(){
     divResultado.innerHTML = "";
     const modal = document.getElementById('modal');
 
-
     for (let i = 0; i < 7; i++){
         function checkPeca(peca){
             return peca == i;
         }
         let resultado = arrayEntrada.filter(checkPeca);
-        if(i !== 0){
-            divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
-            divResultado.innerHTML += `<progress class="progress is-primary" value="${resultado.length}" max="64">15%</progress>`;
-            console.log(codigos[i] + " " + resultado.length + " peça(s) ");
-            console.log(resultado.filter(checkPeca));
+        if (resultado.length > 64){
+            alert("Quantidade de peças excede o limite de 64 peças");
+            break;
         }else{
-            divResultado.innerHTML += `Existem ${resultado.length}<strong> espacos vazios</strong><br> <strong>Contagem de pecas</strong>:<br>`
+            if(i !== 0){
+                divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
+                divResultado.innerHTML += `<progress class="progress is-primary" value="${resultado.length}" max="64">15%</progress>`;
+                console.log(codigos[i] + " " + resultado.length + " peça(s) ");
+                console.log(resultado.filter(checkPeca));
+            }else{
+                divResultado.innerHTML += `Existem ${resultado.length}<strong> espacos vazios</strong><br> <strong>Contagem de pecas</strong>:<br>`
+            }
         }
     }
     modal.classList.add('is-active');

@@ -34,6 +34,10 @@ body{
     margin-top: 10px;
 }
 
+canvas{
+    border-radius: 3px;
+}
+
 #entrada{
     margin: 10px;
     height: 150px;
@@ -107,11 +111,12 @@ textarea:focus{
     font-weight: 400;
     font-family: 'Inter';
     color: white;
+    animation-play-state:paused;
 }
 
-/* #botaoGet:hover{
-    
-} */
+#botaoGet:hover{
+    animation-play-state: running;    
+}
 
 .modal{
     animation: fadeIn 1s;
