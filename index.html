@@ -7,10 +7,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/026e4f1f21.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/026e4f1f21.js" defer crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
-        <div class="title is-1">
+        <div class="title is-1 animate__animated animate__bounceInDown">
             <h1>Desafio do Xadrez <i class="fa-solid fa-chess"></i></h1>
             <p class="subtitle is-3">Contador de pecas</p>
         </div>
@@ -20,14 +21,14 @@
             <div class="divEntrada">
                 <form id="formulario">
                     <textarea id="entrada" name="entrada" rows="8" cols="8" placeholder="insira a configuração das peças(matriz 8x8)"></textarea>
-                    <button id="botaoGet" onclick="getEntrada()" type="button">CONTAR PEÇAS</button>
+                    <button id="botaoGet" onclick="getEntrada()" type="button" class="animate__animated">CONTAR PEÇAS</button>
                 </form>
             </div>
             <div class="modal" id="modal">
                 <div class="modal-background"></div>
                 <div class="modal-content">
                     <div id="cavaloRoda">
-                        <iframe src='https://my.spline.design/untitled-b72ed5ac93eec53597ea10060ff3cac2/' frameborder='0' width='200px' height='300px'></iframe>
+                        <iframe src='https://my.spline.design/untitled-b72ed5ac93eec53597ea10060ff3cac2/' frameborder='0' width='100%' height='100%'></iframe>
                     </div>
                     <div class="resultadoM" id="resultadoM">oi</div>
                 </div>

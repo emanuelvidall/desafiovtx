@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
 
-*{
-    overflow: hidden;
-}
-
 canvas{
     background-color: beige;
 }
@@ -18,7 +14,7 @@ body{
     color: #34364C;
     height: 100vh;
     width: 100vw;
-
+    padding-top:10px;
 }
 
 .containerCanvas{
@@ -30,7 +26,8 @@ body{
     padding: 10px;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.05);
     border-radius: 3px;
-    background-color: rgba(255, 255, 255, 0.1);   
+    background-color: rgba(255, 255, 255, 0.1);
+    max-width: 350px;   
 }
 
 .containerCanvas h3{
@@ -112,21 +109,29 @@ textarea:focus{
     color: white;
 }
 
+/* #botaoGet:hover{
+    
+} */
+
 .modal{
     animation: fadeIn 1s;
 }
 
 .cavaloRoda{
-    height: 200px;
+    height: fit-content;
     width: 500px;
 }
 
+.modal{
+    padding-top: 10px;
+}
+
 footer{
-    position: fixed;
     bottom: 0;
     width: 100%;
     text-align: center;
     margin: auto;
+    margin-top: 60px;
 }
 
 .title h1{
@@ -134,10 +139,6 @@ footer{
 }
 .title p{
     font-weight: 400;
-}
-
-.title{
-    margin-top: 10px;
 }
 
 progress{
