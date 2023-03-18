@@ -76,24 +76,24 @@ areatexto.addEventListener("keydown", (e) => {
 const tabuleiro = document.getElementById('drawIcons')
 //funcao principal com definicao das pecas, tratamento do input do usuario para tratar quaisquer erros, gerando no final uma array de 64 items cada item com um numero de 0-6
 function getEntrada(){
-    const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rei', 'Rainha'];
+    const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rainha', 'Rei'];
     //remocao de todo e qualquer espaco em branco, incluindo empty strings no caso de enter na entrada de dados. Usando .replace para remover os enters e .split para separar os elementos em um array e usando .filter para remover os elementos vazios combinado com o .trim para remover os espacos em branco incluindo empty strings.
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
     console.log(arrayEntrada);
     tabuleiro.innerHTML = "";
     for (let i = 0; i < arrayEntrada.length ; i++){
         if (arrayEntrada[i] == 1){
-            tabuleiro.innerHTML += `<div class="a${i} tip"<h1><i id="tip" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Peao</b>" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 2){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou uma <b>Torre</b>" class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 3){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Cavalo</b>" class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 4){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Bispo</b>" class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 5){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou a <b>Rainha</b>" class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 6){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou o <b>Rei</b>" class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 0){
             tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div>`
         }
@@ -124,16 +124,13 @@ function getEntrada(){
             }
         }
     }
+    let mouseTip = new MouseTip();
+    mouseTip.start();
 //rest do formulario para novos inputs e adiciona a classe is-active para exibir o modal
         // modal.classList.add('is-active');
         formulario.reset();
 }
 }
-
-    tippy('#tip', {
-                content: 'My tooltip!',
-            });
-
 //funcao para fechar o modal com remocao da classe
 function fecharModal(){
     const modal = document.getElementById('modal');
@@ -164,12 +161,4 @@ function modalExplicacao(){
 }
 function fecharModalExplicacao(){
     explicacao.classList.remove('is-active');
-}
-
-//preencher canvas com icones do fa de cada peca, usando o codigo de cada peca como referencia para o icone. No canvas, cada espaco sera uma nova div com icone correspondente ou posso usar uma div em cima do canvas e dividir com uma grid 8x8 e cada element seria o icone referente.
-
-//desenhar os icones com ctxdrawimage?
-
-function adicionapecas(){
-    tabuleiro.innerHTML = `<div class="a8"<h1><i class="fas fa-chess-rook"></i></h1></div>`
 }

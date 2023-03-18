@@ -114,6 +114,7 @@ textarea:focus{
     color: white;
     cursor: pointer;
     animation-play-state: paused;
+    margin-top: 5px;
 }
 
 #botaoGet:hover{
