@@ -89,17 +89,17 @@ function getEntrada(){
     //Loop principa para preencher grid 8x8 com respectivos icones
     for (let i = 0; i < arrayEntrada.length ; i++){
         if (arrayEntrada[i] == 1){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Peao (1)</b>" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>${codigos[arrayEntrada[i]]} (1)</b>" class="fas fa-chess-pawn animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 2){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou uma <b>Torre (2)</b>" class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou uma <b>${codigos[arrayEntrada[i]]}(2)</b>" class="fas fa-chess-rook animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 3){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Cavalo (3)</b>" class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>${codigos[arrayEntrada[i]]}(3)</b>" class="fas fa-chess-knight animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 4){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>Bispo (4)</b>" class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou um <b>${codigos[arrayEntrada[i]]}(4)</b>" class="fas fa-chess-bishop animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 5){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou a <b>Rainha (5)</b>" class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou a <b>${codigos[arrayEntrada[i]]} (5)</b>" class="fas fa-chess-queen animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 6){
-            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou o <b>Rei (6)</b>" class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
+            tabuleiro.innerHTML += `<div class="a${i}"<h1><i mousetip mousetip-msg="Sou o <b>${codigos[arrayEntrada[i]]}(6)</b>" class="fas fa-chess-king animate__animated animate__bounce"></i></h1></div>`
         }else if(arrayEntrada[i] == 0){
             tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div>`
         }
