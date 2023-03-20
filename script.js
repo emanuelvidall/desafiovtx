@@ -1,7 +1,6 @@
 /* criado por Emanuel Vidal (https://emanuelvidal.com) para o Desafio do Xadrez - UNIFOR Vortex 2023 */
 
 //definindo canvas, cores dos rects e desenhando o tabuleiro com canvas grid 8x8, usando forloop para desenhar os rects e usando condicional para alternar as cores dos rects, tamanho do rect 50x50
-
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 ctx.fillStyle = '#E8EDF9';
@@ -15,6 +14,11 @@ for (let i = 0; i < 8; i++) {
         }
     }
 }
+
+
+
+
+
 //definicoes do script toastr para notificacoes de erro
 toastr.options = {
     "closeButton": false,
@@ -34,6 +38,10 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
 }
+
+
+
+
 //_____________restricao de input
 //restringindo input do usuario a 64 numeros, com espacos entre si, 8 por linha, usando eventlistener para ouvir todo input e tratar o valor do input, usando condicional para restringir o input a 64 numeros, usando forloop para adicionar espacos entre os numeros e usando condicional para adicionar enter de nova linha a cada 8 numeros
 const areatexto = document.getElementById('entrada');
@@ -65,6 +73,11 @@ areatexto.addEventListener("input", () => {
     }
     areatexto.value = newvalue;
 });
+
+
+
+
+
 //_______________funcoes para abrir e fechar modal
 //eventlistener para abrir e fechar modal quando cursor estiver na textarea
 areatexto.addEventListener("keydown", (e) => {
@@ -74,18 +87,35 @@ areatexto.addEventListener("keydown", (e) => {
         fecharModal();
     }
 });
+
+
+
+
+
 //_______________funcao principal para desenhar icones e contar pecas (duas formulas diferentes)
 const tabuleiro = document.getElementById('drawIcons')
 //funcao principal com definicao das pecas, tratamento do input do usuario para tratar quaisquer erros, gerando no final uma array de 64 items cada item com um numero de 0-6
 
 /* criado por Emanuel Vidal (https://emanuelvidal.com) para o Desafio do Xadrez - UNIFOR Vortex 2023 */
 
+
+
+
+
+
 function getEntrada(){
     const codigos = ['Vazio', 'Peão', 'Bispo', 'Cavalo', 'Torre', 'Rainha', 'Rei'];
     //_______________tratamento do input do usuario
     //usando .split() para transformar a string em array, usando .join() para adicionar espacos entre os numeros, usando .replace() para substituir os enters por espacos, usando .split() para transformar a string em array, usando .filter() e .trim() para remover os espacos vazios do array e usando
+
+
+
     const arrayEntrada = document.getElementById('entrada').value.split("").join(" ").replace( /\n/g, " ").split(' ').filter(e => String(e).trim());
     tabuleiro.innerHTML = "";
+    console.log('arrayEntrada:____', arrayEntrada)
+
+
+
     //Loop principa para preencher grid 8x8 com respectivos icones
     for (let i = 0; i < arrayEntrada.length ; i++){
         if (arrayEntrada[i] == 1){
@@ -103,6 +133,10 @@ function getEntrada(){
         }else if(arrayEntrada[i] == 0){
             tabuleiro.innerHTML += `<div class="a${i}"<h1></i></h1></div>`
         }
+
+
+
+
     //notificacao para usuario caso o input nao tenha 64 numeros
     if (arrayEntrada.length > 64 || arrayEntrada.length < 64){
             toastr.error("Preencha com 64 peças ou espaços vazios");
@@ -116,8 +150,15 @@ function getEntrada(){
             function checkPeca(peca){
                 return peca == i;
             }
+
+
+
+
             //array resultado criaca para receber o resultado do .filter usando a condicional do checkPeca que retorna o valor de cada peca do array
             let resultado = arrayEntrada.filter(checkPeca);
+
+            console.log('resultado:____', resultado);
+
             //quando nao for espaco vazio, exibir o resultado no modal com o nome da peça e uma progress bar
             if(i !== 0){
                 divResultado.innerHTML += "<strong>" + codigos[i] + "</strong>" + ": " + resultado.length + " peça(s) " + "<br>";
@@ -128,12 +169,24 @@ function getEntrada(){
             }
         }
     }
+
+
+
+
     //definicao do mouseTip para exibir o nome da peca ao passar o mouse (tem que ser feita junto com o preenchimento das pecas do tabuleiro)
     let mouseTip = new MouseTip();
     mouseTip.start();
         
+
+
+
+
+
     //adiciona a classe is-active para exibir o modal
     modal.classList.add('is-active');
+
+
+
     //adicionando o elemento spline-viewer para resetar e exibir o modelo 3d do cavalo ao clicar no botao (sem isso, a renderizacao nao funciona na segunda vez que o modal for aberto)
     const cavaloRoda = document.getElementById('cavaloRoda');
     cavaloRoda.innerHTML = "";
@@ -142,6 +195,11 @@ function getEntrada(){
     formulario.reset();
     }
 }
+
+
+
+
+
 //funcao para fechar o modal com remocao da classe
 function fecharModal(){
     const modal = document.getElementById('modal');
